@@ -3,7 +3,7 @@ import sys
 class Classifier:
     """utility class for number classification as  DEFICIENT, PERFECT or ABUNDANT"""
 
-    classification = ("DEFICIENT", "PERFECT" , "ABUNDANT", "NOT A POSITIVE NUMBER")
+    classification = ("DEFICIENT", "PERFECT" , "ABUNDANT", "NOT A POSITIVE NUMBER(>0)")
     def list_classifier(self, number_list):
         """Function that recieves a list of numbers and returns a dictionary with the classification of each one
 
@@ -12,7 +12,7 @@ class Classifier:
         """
         classified_result = {}
         for number in number_list:
-            if isinstance(number,int):
+            if isinstance(number,int) and int(number) > 0:
                 classified_result[number] = self.num_classifier(number)
             else:
                 classified_result[number] = self.classification[3]

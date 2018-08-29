@@ -4,7 +4,7 @@
   <title>Ejercicio2 Ovidiu</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script type="text/javascript" src="js/dataParser.js" ></script>
+  <script type="text/javascript" src="./js/dataParser.js" ></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -73,13 +73,9 @@
       	<div id="toReplaceWithGraphs">
 
         <p>They are warming up... just click the button</p>
-        <!-- stages:
-            * fetch data files
-            * store in objects (JSON)
-            * uniformize data
-            * use graph library to display -->
+
         <button type="button" class="btn btn-primary btn-lg btn-block"
-        id="trigger_button" onclick="obtainJSON()">Download data and generate
+        id="trigger_button" onclick="startGraphRoutine()">Download data and generate
         graphs</button>
 
         </div>

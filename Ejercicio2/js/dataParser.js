@@ -8,6 +8,7 @@ var myArticle = document.getElementById('toReplaceWithGraphs');
 var processedData = []
 var fileCounter = 0;
 var debugMode = true;
+
 function processData1(result){
   if (debugMode){
     console.log("Process Data 1 function");
@@ -130,13 +131,15 @@ if (debugMode){
 function graphingData(){
   if (debugMode){
     console.log("Function grpahing data");
+    console.log("Data size is: ", processedData.length);
   }
   if (fileCounter == 3){
     toReplaceWithGraphs.innerHTML = "Data retrieved <br> Processing data files... <br> Graphing data...";
     if (debugMode){
-      console.log("all data set obtained... grpahing ");
+      console.log("all data set obtained... graphing ");
     }
-    
+    makeGraphs(processedData);
+
   }
 }
 
@@ -148,13 +151,13 @@ return fetch(url).then(resp => resp.json())
 }
 
 function obtainJSON(){
-  getDataFromURL('https://s3.amazonaws.com/logtrust-static/test/test/data2.json')
-  .then(processData2)
+  getDataFromURL('https://s3.amazonaws.com/logtrust-static/test/test/data1.json')
+  .then(processData1)
   .catch(function(error) {
     console.log('Request failed', error);
   });
-  getDataFromURL('https://s3.amazonaws.com/logtrust-static/test/test/data1.json')
-  .then(processData1)
+  getDataFromURL('https://s3.amazonaws.com/logtrust-static/test/test/data2.json')
+  .then(processData2)
   .catch(function(error) {
     console.log('Request failed', error);
   });

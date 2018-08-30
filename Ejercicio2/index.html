@@ -4,10 +4,13 @@
   <title>Ejercicio2 Ovidiu</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="./js/chartMaker.js" ></script>
   <script type="text/javascript" src="./js/dataParser.js" ></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
   <style>
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     .row.content {height: 550px}
@@ -22,6 +25,7 @@
     @media screen and (max-width: 767px) {
       .row.content {height: auto;}
     }
+    
   </style>
 </head>
 <body>
@@ -79,13 +83,27 @@
         graphs</button>
 
         </div>
+
       </div>
+  </div>
+  <div class="col-sm-9">
+      <div class="well">
+  <!--Div that will hold the line chart-->
+<div id="chart_div1">algo1</div>
+
+
+</div>
+</div>
+<div class="col-sm-9">
+    <div class="well">
+<!--Div that will hold the pie chart-->
+<div id="chart_div2">algo2</div>
+
+</div>
+</div>
   </div>
   </div>
 </div>
-<script>
-
-</script>
 
 </body>
 </html>

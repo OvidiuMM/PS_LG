@@ -7,12 +7,8 @@
 var myArticle = document.getElementById('toReplaceWithGraphs');
 var processedData = []
 var fileCounter = 0;
-var debugMode = true;
-
 function processData1(result){
-  if (debugMode){
-    console.log("Process Data 1 function");
-  }
+
   //parse data set 1
     for (dataField of result){
       //for each filed store cat, date and val (with proper format)
@@ -42,9 +38,6 @@ function processData1(result){
       if (posFound != -1){
             processedData[posFound].value = parseFloat(processedData[posFound].value)
         + parseFloat(processedDataField.value);
-        if (debugMode){
-          console.log("coincidence found for elment of data set 1: ", processedDataField);
-        }
       }
       else{
       processedData.push(processedDataField);
@@ -56,9 +49,6 @@ function processData1(result){
   }
 
   function processData2(result){
-    if (debugMode){
-      console.log("Process Data 2 function");
-    }
     //parse data set 2
     for (dataField of result){
       //for each filed store cat, date and val (with proper format)
@@ -76,9 +66,6 @@ function processData1(result){
         if (posFound != -1){
           processedData[posFound].value = parseFloat(processedData[posFound].value)
           + parseFloat(processedDataField.value);
-          if (debugMode){
-            console.log("coincidence found for elment of data set 2: ", processedDataField);
-          }
         }
         else{
         processedData.push(processedDataField);
@@ -115,10 +102,6 @@ if (debugMode){
       if (posFound != -1){
         processedData[posFound].value = parseFloat(processedData[posFound].value)
         + parseFloat(processedDataField.value);
-
-        if (debugMode){
-          console.log("coincidence found for elment of data set 3: ",processedDataField);
-        }
     }
     else{
     processedData.push(processedDataField);
@@ -129,24 +112,14 @@ if (debugMode){
 }
 
 function graphingData(){
-  if (debugMode){
-    console.log("Function grpahing data");
-    console.log("Data size is: ", processedData.length);
-  }
   if (fileCounter == 3){
     toReplaceWithGraphs.innerHTML = "Data retrieved <br> Processing data files... <br> Graphing data...";
-    if (debugMode){
-      console.log("all data set obtained... graphing ");
-    }
     makeGraphs(processedData);
 
   }
 }
 
 function getDataFromURL(url){
-  if (debugMode){
-    console.log("get data function for url: ",url);
-  }
 return fetch(url).then(resp => resp.json())
 }
 

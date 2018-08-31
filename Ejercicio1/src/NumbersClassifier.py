@@ -40,4 +40,5 @@ class Classifier:
 
 
 if __name__ == "__main__":
-    Classifier.list_classifier(sys.argv)
+    classifier = Classifier()
+    print(classifier.list_classifier(map(int, sys.argv[1].split())))
